@@ -3,7 +3,7 @@ import requests
 """List HTTP METHODS"""
 class Http_methods:
     headers = {'Content-Type': 'application/json'}
-    cookeis = ""
+    cookeis = " "
 
     @staticmethod
     def get(url):
@@ -13,7 +13,7 @@ class Http_methods:
 
     @staticmethod
     def post(url,body):
-            result = requests.post(url,json=body, headers=Http_methods.headers, cookeis=Http_methods.cookeis)
+            result = requests.post(url,json=body, headers=Http_methods.headers) #cookeis=Http_methods.cookeis)
             return result
 
     @staticmethod
