@@ -7,12 +7,11 @@ key = "?key=qaclick123" #Parameter for all requests
 
 
 class Google_maps_api():
-
+    """Method Post"""
     @staticmethod
     def create_new_place():
 
-
-        post_resourse = "/maps/api/place/add/json" #Post resoure form merhod Post
+        post_resourse = "/maps/api/place/add/json" #Post resoure
         post_url = base_URL + post_resourse + key
         print(post_url)
         json_create_new_place = {
@@ -35,3 +34,16 @@ class Google_maps_api():
         resaut_post = Http_methods.post( post_url, json_create_new_place)
         print(resaut_post.text)
         return resaut_post
+
+"""Method Get"""
+
+
+#@staticmethod
+    def get_new_place(place_id):
+
+        get_resorurse = "/maps/api/place/get/json" ##GET resoure
+        get_url = base_URL + get_resorurse + key + "&place_id" + place_id
+        print(get_url)
+        resaut_get = Http_methods.get(get_url)
+        print(resaut_get.text)
+        return resaut_get

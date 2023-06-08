@@ -18,10 +18,10 @@ class Http_methods:
 
     @staticmethod
     def put(url, body):
-        result = requests.put(url, json=body, headers=Http_methods.headers, cookeis=Http_methods.cookeis)
+        result = requests.put(url, json=body, headers=Http_methods.headers)#cookeis=Http_methods.cookeis)
         return result
 
     @staticmethod
     def delete(url, body):
-        result = requests.delete(url, json=body, headers=Http_methods.headers, cookeis=Http_methods.cookeis)
+        result = requests.delete(url, json=body, headers=Http_methods.headers)# cookeis=Http_methods.cookeis)
         return result

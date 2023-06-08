@@ -7,5 +7,9 @@ class Test_create_place():
 
         print("Method Post")
         result_post: Responce = Google_maps_api.create_new_place()
+        check_post = result_post.json()
+        place_id = check_post.get("place_id")
 
+        print("Method Get")
+        result_get : Responce = Google_maps_api.get_new_place(place_id)
 
