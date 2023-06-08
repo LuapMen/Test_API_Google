@@ -3,11 +3,11 @@ import requests
 """List HTTP METHODS"""
 class Http_methods:
     headers = {'Content-Type': 'application/json'}
-    cookeis = " "
+    cookeis = ""
 
     @staticmethod
     def get(url):
-            result = requests.get(url, headers=Http_methods.headers, cookeis=Http_methods.cookeis)
+            result = requests.get(url, headers=Http_methods.headers),# cookeis=Http_methods.cookeis)
             return result
 
 
