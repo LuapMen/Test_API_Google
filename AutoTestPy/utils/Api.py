@@ -41,5 +41,35 @@ class Google_maps_api():
         get_url = base_URL + get_resorurse + key + "&place_id=" + place_id
         print(get_url)
         result_get = Http_methods.get(get_url)
-        # print(result_get.text)
+        # print(result_get.text)                         #TUPLE
         # return result_get
+
+    """Method PUT / update information """
+    @staticmethod
+    def put_new_place(place_id):
+        put_resorurse = "/maps/api/place/update/json"  #PUT resoure
+        put_url = base_URL +put_resorurse + key
+        print(put_url)
+        json_for_updatate_new_location = {
+            "place_id": place_id,
+            "address": "Ukraine Forever, UA",
+            "key": "qaclick123"
+
+        }
+        result_put = Http_methods.put(put_url , json_for_updatate_new_location)
+        print(result_put.text)
+        return result_put
+
+    """Method Delete / Delete location """
+    @staticmethod
+    def delete_new_place(place_id):
+        delete_resorurse = "/maps/api/place/delete/json"  #PUT delete
+        delete_url = base_URL + delete_resorurse + key
+        print(delete_url)
+        json_for_delete_location = {
+            "place_id": place_id,
+        }
+        result_delete = Http_methods.delete(delete_url , json_for_delete_location)
+        print(result_delete.text)
+        return result_delete
+
