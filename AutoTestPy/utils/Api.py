@@ -38,7 +38,7 @@ class Google_maps_api():
     def get_new_place(place_id):
 
         get_resorurse = "/maps/api/place/get/json" ##GET resoure
-        get_url =str(base_URL + get_resorurse + key + "&place_id" + place_id)
+        get_url = base_URL + get_resorurse + key + "&place_id=" + place_id
         print(get_url)
         result_get = Http_methods.get(get_url)
         # print(result_get.text)
