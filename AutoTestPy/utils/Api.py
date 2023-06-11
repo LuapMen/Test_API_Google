@@ -1,6 +1,6 @@
 from utils.http_methods import Http_methods
 
-"""List API METHOD FROM GOODLE MAPS """
+"""List API METHOD FROM GOOGLE MAPS """
 
 base_URL = "https://rahulshettyacademy.com"  #Base URL
 key = "?key=qaclick123" #Parameter for all requests
@@ -30,9 +30,10 @@ class Google_maps_api():
 
         }
 
-        resaut_post = Http_methods.post( post_url, json_create_new_place)
-        print(resaut_post.text)
-        return resaut_post
+        result_post = Http_methods.post( post_url, json_create_new_place)
+        print(result_post.text)
+        return result_post
+
     """Method get"""
     @staticmethod
     def get_new_place(place_id):
@@ -41,8 +42,8 @@ class Google_maps_api():
         get_url = base_URL + get_resorurse + key + "&place_id=" + place_id
         print(get_url)
         result_get = Http_methods.get(get_url)
-        # print(result_get.text)                         #TUPLE
-        # return result_get
+        print(result_get.text)                         #TUPLE
+        return result_get
 
     """Method PUT / update information """
     @staticmethod
