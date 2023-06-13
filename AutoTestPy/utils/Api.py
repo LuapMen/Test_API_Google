@@ -42,7 +42,7 @@ class Google_maps_api():
         get_url = base_URL + get_resorurse + key + "&place_id=" + place_id
         print(get_url)
         result_get = Http_methods.get(get_url)
-        print(result_get.text)                         #TUPLE
+        print(result_get.text)
         return result_get
 
     """Method PUT / update information """
